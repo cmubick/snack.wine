@@ -48,6 +48,9 @@ web_modules/
 *.tsbuildinfo
 
 # Optional npm cache directory
+dist/
+.env.local
+.DS_Store
 .npm
 
 # Optional eslint cache
