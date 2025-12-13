@@ -13,8 +13,7 @@ function App() {
     setError('')
 
     try {
-      // Call your backend endpoint
-      const response = await fetch('https://ok381cvmol.execute-api.us-west-2.amazonaws.com/subscribe', {
+      const response = await fetch('https://ok381cvmol.execute-api.us-west-2.amazonaws.com/prod/subscribe', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -27,11 +26,12 @@ function App() {
         setEmail('')
         setTimeout(() => setSubmitted(false), 5000)
       } else {
-        setError('Error subscribing. Please try again.')
+        const errorData = await response.json()
+        setError(errorData.error || 'Error subscribing. Please try again.')
       }
     } catch (error) {
       console.error('Error submitting form:', error)
-      setError('Error submitting email. Please try again.')
+      setError('Network error. Please check your connection and try again.')
     } finally {
       setIsLoading(false)
     }
