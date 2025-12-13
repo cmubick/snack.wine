@@ -1,10 +1,10 @@
-const https = require('https');
+import https from 'https';
 
 const MAILCHIMP_API_KEY = process.env.MAILCHIMP_API_KEY;
 const MAILCHIMP_AUDIENCE_ID = process.env.MAILCHIMP_AUDIENCE_ID;
 const MAILCHIMP_SERVER = process.env.MAILCHIMP_SERVER; // e.g., 'us1'
 
-exports.handler = async (event) => {
+export const handler = async (event) => {
   // Enable CORS
   const headers = {
     'Content-Type': 'application/json',
@@ -14,7 +14,7 @@ exports.handler = async (event) => {
   };
 
   // Handle CORS preflight
-  if (event.httpMethod === 'OPTIONS') {
+  if (event.requestContext?.http?.method === 'OPTIONS' || event.httpMethod === 'OPTIONS') {
     return {
       statusCode: 200,
       headers,
@@ -23,9 +23,33 @@ exports.handler = async (event) => {
   }
 
   try {
-    const { email } = JSON.parse(event.body);
+    console.log('Full Event:', JSON.stringify(event, null, 2));
+    
+    // Handle both HTTP API and REST API formats
+    let body = event.body || event.rawBody;
+    
+    if (!body) {
+      console.error('No body in event!');
+      return {
+        statusCode: 400,
+        headers,
+        body: JSON.stringify({ error: 'Request body is empty' }),
+      };
+    }
+    
+    // Handle case where body might be base64 encoded
+    if (event.isBase64Encoded) {
+      body = Buffer.from(body, 'base64').toString('utf-8');
+      console.log('Decoded body:', body);
+    }
+    
+    const parsedBody = typeof body === 'string' ? JSON.parse(body) : body;
+    console.log('Parsed body:', JSON.stringify(parsedBody));
+    
+    const { email } = parsedBody;
+    console.log('Extracted email:', email);
 
-    if (!email) {
+    if (!email || !email.trim?.()) {
       return {
         statusCode: 400,
         headers,
@@ -34,7 +58,7 @@ exports.handler = async (event) => {
     }
 
     // Subscribe to MailChimp
-    const result = await subscribeToMailchimp(email);
+    const result = await subscribeToMailchimp(email.trim());
 
     return {
       statusCode: 200,
@@ -46,7 +70,7 @@ exports.handler = async (event) => {
     return {
       statusCode: 500,
       headers,
-      body: JSON.stringify({ error: 'Failed to subscribe' }),
+      body: JSON.stringify({ error: 'Failed to subscribe', details: error.message }),
     };
   }
 };
@@ -77,10 +101,27 @@ function subscribeToMailchimp(email) {
       });
 
       res.on('end', () => {
+        console.log('MailChimp response status:', res.statusCode);
+        console.log('MailChimp response body:', body);
+        console.log('MailChimp request options:', JSON.stringify({
+          hostname: options.hostname,
+          path: options.path,
+          method: options.method,
+        }));
+        
         if (res.statusCode === 200 || res.statusCode === 201) {
           resolve(JSON.parse(body));
+        } else if (res.statusCode === 400) {
+          // Check if it's a duplicate email error
+          const errorData = JSON.parse(body);
+          if (errorData.title === 'Member Exists') {
+            console.log('Member already exists in MailChimp');
+            resolve({ message: 'Already subscribed' });
+          } else {
+            reject(new Error(`MailChimp validation error: ${errorData.detail}`));
+          }
         } else {
-          reject(new Error(`MailChimp API error: ${res.statusCode}`));
+          reject(new Error(`MailChimp API error: ${res.statusCode} - ${body}`));
         }
       });
     });

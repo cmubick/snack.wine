@@ -13,7 +13,7 @@ function App() {
     setError('')
 
     try {
-      const response = await fetch('https://ok381cvmol.execute-api.us-west-2.amazonaws.com/prod/subscribe', {
+      const response = await fetch('https://bwvhm6jpjd.execute-api.us-west-2.amazonaws.com/subscribe', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
