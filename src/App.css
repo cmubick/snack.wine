@@ -116,6 +116,34 @@ body {
   transform: scale(0.98);
 }
 
+.success-message {
+  font-size: 1.1rem;
+  color: #4ade80;
+  padding: 16px 24px;
+  border: 2px solid #4ade80;
+  border-radius: 4px;
+  background: rgba(74, 222, 128, 0.1);
+  animation: slideIn 0.3s ease-out;
+}
+
+.error-message {
+  color: #f87171;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  text-align: center;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 768px) {
   .title {
     font-size: 2.5rem;
