@@ -35,13 +35,11 @@ jobs:
         SOURCE_DIR: 'dist'
 
     - name: Invalidate CloudFront Distribution
-      if: always()
+      if: success() && secrets.CLOUDFRONT_DISTRIBUTION_ID != ''
       run: |
-        if [ -n "${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}" ]; then
-          aws cloudfront create-invalidation \
-            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
-            --paths "/*"
-        fi
+        aws cloudfront create-invalidation \
+          --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+          --paths "/*"
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

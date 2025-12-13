@@ -76,3 +76,4 @@ The workflow will automatically deploy to S3!
 1. Go to `snack.wine`
 2. Enter an email and click "Notify Me"
 3. Check MailChimp audience for the new subscriber
+
