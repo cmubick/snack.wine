@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import './App.css'
+import heroMobile from './assets/snack-wine-spritzers-600.webp'
+import heroTablet from './assets/snack-wine-spritzers-1200.webp'
+import heroDesktop from './assets/snack-wine-spritzers-2400.webp'
 
 function App() {
   const [email, setEmail] = useState('')
@@ -39,8 +42,14 @@ function App() {
 
   return (
     <div className="container">
+      <picture>
+        <source media="(min-width: 1921px)" srcSet={heroDesktop} />
+        <source media="(min-width: 769px)" srcSet={heroTablet} />
+        <img src={heroMobile} alt="Snack Wine Spritzers" className="hero-image" />
+      </picture>
+      
       <div className="content">
-        <h1 className="title">Snack Wine</h1>
+        {/* <h1 className="title">Snack Wine</h1> */}
         <p className="subtitle">Coming Soon</p>
         <p className="description">Something delicious is on the way</p>
         
