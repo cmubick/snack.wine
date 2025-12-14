@@ -45,20 +45,20 @@ function App() {
       <picture>
         <source media="(min-width: 1921px)" srcSet={heroDesktop} />
         <source media="(min-width: 769px)" srcSet={heroTablet} />
-        <img src={heroMobile} alt="Snack Wine Spritzers" className="hero-image" />
+        <img src={heroMobile} alt="Snack Wine Spritzers - Premium Low-ABV Wine Drinks" className="hero-image" />
       </picture>
       
-      <div className="content">
-        {/* <h1 className="title">Snack Wine</h1> */}
+      <header className="content">
+        <h1 className="title">Snack Wine</h1>
         <p className="subtitle">Coming Soon</p>
-        <p className="description">Something delicious is on the way</p>
+        <p className="description">Premium, low-ABV wine spritzers designed for everyday enjoyment. Portable, refreshing, and thoughtfully made.</p>
         
         {submitted ? (
-          <div className="success-message">
+          <div className="success-message" role="status" aria-live="polite">
             ✓ Thank you! We'll notify you when we launch.
           </div>
         ) : (
-          <form className="email-form" onSubmit={handleSubmit}>
+          <form className="email-form" onSubmit={handleSubmit} aria-label="Waitlist signup">
             <input 
               type="email" 
               placeholder="Enter your email"
@@ -66,6 +66,7 @@ function App() {
               onChange={(e) => setEmail(e.target.value)}
               required
               className="email-input"
+              aria-label="Email address"
             />
             <button 
               type="submit" 
@@ -74,10 +75,10 @@ function App() {
             >
               {isLoading ? 'Sending...' : 'Notify Me'}
             </button>
-            {error && <p className="error-message">{error}</p>}
+            {error && <p className="error-message" role="alert">{error}</p>}
           </form>
         )}
-      </div>
+      </header>
     </div>
   )
 }
