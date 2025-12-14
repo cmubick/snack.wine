@@ -144,6 +144,30 @@ body {
   text-align: center;
 }
 
+.instagram-link {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #e8cd69;
+  text-decoration: none;
+  border: 2px solid #e8cd69;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.instagram-link:hover {
+  background-color: #e8cd69;
+  color: #1a1a1a;
+}
+
+.instagram-link:active {
+  transform: scale(0.98);
+}
+
 @keyframes slideIn {
   from {
     opacity: 0;

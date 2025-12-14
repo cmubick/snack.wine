@@ -78,6 +78,10 @@ function App() {
             {error && <p className="error-message" role="alert">{error}</p>}
           </form>
         )}
+        
+        <a href="https://www.instagram.com/snack.wine.co" target="_blank" rel="noopener noreferrer" className="instagram-link" aria-label="Follow Snack Wine on Instagram">
+          Follow us on Instagram
+        </a>
       </header>
     </div>
   )
