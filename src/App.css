@@ -463,6 +463,27 @@ body {
   transform: scale(0.98);
 }
 
+.pdf-subtitle {
+  font-size: 0.95rem;
+  color: #999;
+  margin: 8px 0 20px 0;
+  font-style: italic;
+}
+
+.pdf-link {
+  display: inline-block;
+  margin-left: 12px;
+  color: #e8cd69;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.pdf-link:hover {
+  color: #d4b857;
+  text-decoration: underline;
+}
+
 .success-message {
   font-size: 1.1rem;
   color: #4ade80;

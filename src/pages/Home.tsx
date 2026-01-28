@@ -104,6 +104,7 @@ function Home() {
           <h3 className="trade-heading">{home.tradeBandHeading}</h3>
           <p className="description">{home.tradeBandCopy}</p>
           <a href="mailto:info@snack.wine" className="trade-link">Get in touch</a>
+          <a href="https://s3.us-west-2.amazonaws.com/snack.wine/assets/Snack-Wine_One-Pager_2026.pdf" target="_blank" rel="noopener noreferrer" className="pdf-link">One-pager (PDF)</a>
         </div>
 
         <p className="home-disclaimer">{home.disclaimer}</p>

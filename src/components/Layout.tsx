@@ -43,6 +43,10 @@ function Layout() {
             <a href="https://www.instagram.com/snack.wine.pdx" target="_blank" rel="noopener noreferrer" className="social-link">
               Instagram
             </a>
+            {' • '}
+            <a href="https://s3.us-west-2.amazonaws.com/snack.wine/assets/Snack-Wine_One-Pager_2026.pdf" target="_blank" rel="noopener noreferrer" className="social-link">
+              One-pager (PDF)
+            </a>
           </p>
         </div>
       </footer>
