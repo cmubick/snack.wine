@@ -20,7 +20,7 @@ export const home = {
   storyHeading: 'From Fresno County to Portland',
   story: [
     'I grew up in Fresno County, with my dad farming every day. He still does.',
-    'Wine has been part of my family for generations — my grandfather and great-grandfather made wine long before me, and my dad has been making wine my whole life.',
+    'Wine has been part of my family for generations — my great-grandfather made wine long before me, my grandfather grew grapes, and my dad has been making wine my whole life.',
     'I moved to Portland in 2001 and found music, art, rivers, bikes, and a community of artists and makers I love deeply.',
     'Snack Wine is my way of connecting my hometown with my adopted home — and a way to step out of the office and back into the field and the winery, with my dad, where this all began.',
   ],
