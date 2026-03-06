@@ -4,7 +4,6 @@ import Layout from './components/Layout'
 import Home from './pages/Home'
 import About from './pages/About'
 import Spritzers from './pages/Spritzers'
-import Trade from './pages/Trade'
 import Waitlist from './pages/Waitlist'
 
 function App() {
@@ -14,7 +13,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/spritzers" element={<Spritzers />} />
-        <Route path="/trade" element={<Trade />} />
         <Route path="/waitlist" element={<Waitlist />} />
       </Route>
     </Routes>
