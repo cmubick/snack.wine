@@ -4,7 +4,6 @@
    Root + Variables
 ------------------------- */
 :root {
-  --frame-inset: 48px; /* distance from border to content */
   --snack-font: "Fraunces", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 
   color-scheme: light;
@@ -12,71 +11,10 @@
   background: #f5efe6;
 }
 
-/* -------------------------
-   Lock page scrolling
-------------------------- */
 html,
 body {
   width: 100%;
-  height: 100%;
   margin: 0;
-  overflow: hidden;
-}
-
-/* -------------------------
-   SVG Border Overlay (ONLY border)
-------------------------- */
-html::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1000;
-
-  background-image: url("/assets/snack-border.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
-}
-
-/* Swap to thinner border on smaller screens */
-@media (max-width: 768px) {
-  html::before {
-    background-image: url("/assets/snack-border-mobile.svg");
-  }
-}
-
-/* -------------------------
-   Scrollable inner frame
-------------------------- */
-#frame {
-  position: absolute;
-  inset: var(--frame-inset);
-  overflow-y: auto;
-  overflow-x: hidden;
-
-  padding: 20px;
-  box-sizing: border-box;
-  background: #f5efe6;
-
-  -webkit-overflow-scrolling: touch;
-}
-
-/* Tighter inset on small screens */
-@media (max-width: 768px) {
-  :root {
-    --frame-inset: 28px;
-  }
-}
-
-@media (max-width: 480px) {
-  :root {
-    --frame-inset: 20px;
-  }
-
-  #frame {
-    padding: 14px;
-  }
 }
 
 /* -------------------------
@@ -107,9 +45,9 @@ body {
   padding: 16px 20px;
   box-sizing: border-box;
   position: fixed;
-  top: var(--frame-inset);
-  left: var(--frame-inset);
-  right: var(--frame-inset);
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 900;
   animation: fadeIn 0.4s ease-in;
 }
@@ -171,7 +109,6 @@ body {
   flex: 1;
   width: 100%;
   margin-top: 90px;
-  overflow-y: auto;
   padding-bottom: 20px;
 }
 
@@ -199,7 +136,7 @@ body {
 .copyright {
   font-size: 0.85rem;
   color: #999;
-  margin-top: 12px;
+  margin: 0;
 }
 
 .footer-social {
@@ -244,10 +181,49 @@ body {
   animation: fadeIn 0.8s ease-in;
 }
 
+.spritzers-hero {
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  margin: 24px 0 40px 0;
+  animation: fadeIn 0.8s ease-in;
+}
+
+.spritzer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.spritzer-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.spritzer-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.spritzer-description {
+  font-size: 1rem;
+  color: #888;
+  margin: 0;
+}
+
 .content {
   text-align: center;
-  max-width: 600px;
+  max-width: 540px;
   animation: fadeIn 0.8s ease-in;
+}
+
+.content-wide {
+  max-width: 760px;
 }
 
 .content-left {
@@ -296,7 +272,7 @@ body {
 
 .description {
   font-size: 1.2rem;
-  margin: 5px 0 15px 0;
+  margin: 5px 0 24px 0;
   color: #666;
 }
 
@@ -415,21 +391,17 @@ body {
 .home-disclaimer {
   font-size: 0.85rem;
   color: #999;
-  margin-top: 32px;
-  padding-top: 20px;
-  border-top: 1px solid #ddd;
+  margin-top: 16px;
 }
 
 /* -------------------------
    Trade Band
 ------------------------- */
 .trade-band {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 24px;
-  margin: 32px 0;
-  max-width: 600px;
+  padding: 32px 0;
+  margin: 16px 0;
+  max-width: 540px;
+  border-top: 1px solid #e5ddd3;
 }
 
 .trade-heading {
@@ -500,19 +472,6 @@ body {
   text-align: center;
 }
 
-/* -------------------------
-   Instagram link
-------------------------- */
-.instagram-link {
-  display: inline-block;
-  margin-top: 24px;
-  padding: 10px 20px;
-  color: white;
-  background: #e8cd69;
-  text-decoration: none;
-  border: none;
-  border-radius: 4px;
-}
 
 /* -------------------------
    Mobile typography tweaks

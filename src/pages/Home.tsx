@@ -53,12 +53,6 @@ function Home() {
         <p className="subtitle">{home.subhead}</p>
         <p className="description">{home.support}</p>
 
-        <ul className="bullets-list">
-          {home.bullets.map((bullet, idx) => (
-            <li key={idx}>{bullet}</li>
-          ))}
-        </ul>
-
         {submitted ? (
           <div className="success-message" role="status" aria-live="polite">
             ✓ {home.h1 === 'Snack Wine' ? 'Thanks — you\'re on the list.' : 'Thank you!'}
@@ -79,32 +73,16 @@ function Home() {
               className="submit-btn"
               disabled={isLoading}
             >
-              {isLoading ? 'Sending...' : 'Join the list'}
+              {isLoading ? 'Sending...' : 'Join the waitlist'}
             </button>
             {error && <p className="error-message" role="alert">{error}</p>}
           </form>
         )}
 
-        <h2 className="section-title">{home.storyHeading}</h2>
-        {home.story.map((paragraph, idx) => (
-          <p key={idx} className="description">{paragraph}</p>
-        ))}
-
-        <h2 className="section-title">{home.previewHeading}</h2>
-        <p className="description">{home.previewIntro}</p>
-        <ul className="preview-list">
-          {home.previewItems.map((item, idx) => (
-            <li key={idx}>
-              <strong>{item.name}</strong> — {item.description}
-            </li>
-          ))}
-        </ul>
-
         <div className="trade-band">
           <h3 className="trade-heading">{home.tradeBandHeading}</h3>
           <p className="description">{home.tradeBandCopy}</p>
           <a href="mailto:info@snack.wine" className="trade-link">Get in touch</a>
-          <a href="https://s3.us-west-2.amazonaws.com/snack.wine/assets/Snack-Wine_One-Pager_2026.pdf" target="_blank" rel="noopener noreferrer" className="pdf-link">One-pager (PDF)</a>
         </div>
 
         <p className="home-disclaimer">{home.disclaimer}</p>

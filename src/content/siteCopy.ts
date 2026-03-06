@@ -10,13 +10,9 @@ export const siteConfig = {
 export const home = {
   h1: 'Snack Wine',
   tagline: 'Portland-based. Fresno-made.',
-  subhead: 'Canned wine spritzers made with family-grown fruit from Fresno County, California.',
-  support: 'Launching soon in Portland. Join the waitlist for release dates, pop-ups, and first drops. Trade inquiries welcome.',
-  bullets: [
-    'Family-grown fruit from Fresno County, CA',
-    'Portland-based. Fresno-made.',
-    'Built for cans: fresh, portable, shareable',
-  ],
+  subhead: 'Canned wine spritzers made with family-grown fruit from Fresno County.',
+  support: 'Launching soon in Portland. Join the waitlist for release dates, pop-ups, and first drops.',
+  bullets: [],
   storyHeading: 'From Fresno County to Portland',
   story: [
     'I grew up in Fresno County, with my dad farming every day. He still does.',
@@ -31,8 +27,8 @@ export const home = {
     { name: 'Rosé Spritz', description: 'fresh fruit' },
   ],
   tradeBandHeading: 'For shops, distributors, and partners',
-  tradeBandCopy: 'If you\'re interested in carrying Snack Wine, tasting prototypes when available, or helping bring it to market, reach out — I\'m building relationships now for 2026.',
-  disclaimer: 'Packaging shown may be prototype / concept. Online ordering not yet available.',
+  tradeBandCopy: 'If you\'re interested in carrying Snack Wine or learning more as the product launches, I\'d love to connect.',
+  disclaimer: 'Packaging shown may be prototype or concept. Online ordering not yet available. Must be 21+.',
 }
 
 export const about = {
@@ -48,13 +44,12 @@ export const about = {
 }
 
 export const spritzers = {
-  heading: 'Spritzers (preview)',
-  intro: 'We\'re preparing our first canned releases. Here\'s the direction — details may evolve as we dial in the canning path.',
-  note: 'Some details (names, final blends, packaging) may change as we finalize production.',
+  heading: 'Spritzers',
+  note: 'Packaging and final blends may evolve as production is finalized.',
   items: [
-    { name: 'Rosé Spritz', description: 'Fresh fruit, dry, bright, effortlessly crisp (coming in spring)' },
-    { name: 'Red Spritz', description: 'Bright red wine with citrus lift (coming in spring)' },
-    { name: 'White Spritz', description: 'Crisp, dry, clean summer refreshment (coming in summer)' },
+    { name: 'Rosé Wine Spritzer', description: 'Fresh fruit, dry, bright, effortlessly crisp.' },
+    { name: 'White Wine Spritzer', description: 'Crisp, dry, clean summer refreshment.' },
+    { name: 'Red Wine Spritzer', description: 'Bright red wine with citrus lift.' },
   ],
 }
 

@@ -1,5 +1,4 @@
 import { Link, Outlet } from 'react-router-dom'
-import { siteConfig } from '../content/siteCopy'
 
 function Layout() {
   return (
@@ -35,17 +34,10 @@ function Layout() {
 
       <footer className="footer">
         <div className="footer-content">
-          {siteConfig.disclaimers.map((disclaimer, idx) => (
-            <p key={idx} className="disclaimer">{disclaimer}</p>
-          ))}
           <p className="copyright">© 2026 Snack Wine. All rights reserved.</p>
           <p className="footer-social">
             <a href="https://www.instagram.com/snack.wine.pdx" target="_blank" rel="noopener noreferrer" className="social-link">
               Instagram
-            </a>
-            {' • '}
-            <a href="https://s3.us-west-2.amazonaws.com/snack.wine/assets/Snack-Wine_One-Pager_2026.pdf" target="_blank" rel="noopener noreferrer" className="social-link">
-              One-pager (PDF)
             </a>
           </p>
         </div>
