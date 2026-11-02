@@ -10,6 +10,9 @@ function About() {
           <p key={idx} className="description">{paragraph}</p>
         ))}
 
+        <h2 className="section-title">{about.vineToCanHeading}</h2>
+        <p className="description">{about.vineToCan}</p>
+
         <h2 className="section-title">{about.whyCansHeading}</h2>
         <p className="description">{about.whyCans}</p>
       </div>

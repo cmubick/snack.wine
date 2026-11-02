@@ -21,7 +21,7 @@
 ## SEO Optimizations Implemented
 
 ### Meta Tags
-- **Title**: Includes primary keywords (wine spritzers, low-ABV)
+- **Title**: Brand name plus the hero headline
 - **Description**: 160 characters with compelling call-to-action
 - **Keywords**: Primary and supporting keywords
 - **Open Graph**: Social sharing images and descriptions
@@ -29,7 +29,7 @@
 
 ### Structured Data (JSON-LD)
 - **Organization Schema**: Company info, logo, social links
-- **Product Schema**: Product details, brand, pre-order status
+- **Product Schema**: Product details, brand
 - **Breadcrumb-ready**: Foundation for future blog content
 
 ### Technical SEO
@@ -48,7 +48,6 @@
 
 ### Blog Content
 Target these keywords in future blog posts:
-- "low alcohol wine drinks"
 - "wine alternatives"
 - "best wine spritzers"
 - "portable wine"
@@ -56,16 +55,15 @@ Target these keywords in future blog posts:
 
 ### Link Building
 - Reach out to wine lifestyle bloggers
-- Partner with wellness/health sites (low-ABV angle)
 - Guest posts on beverage industry publications
 
 ### Social Signals
-- Instagram: [@snackwines](https://instagram.com/snackwines)
+- Instagram: [@snack.wine.pdx](https://www.instagram.com/snack.wine.pdx)
 - Share user-generated content
 - Wine community engagement
 
 ### Email Marketing
-- Build email list via waitlist
+- Build email list via mailing list
 - Send launch announcements
 - Share exclusive content with subscribers
 

@@ -1,4 +1,4 @@
-# Snack Wine - Coming Soon Landing Page
+# Snack Wine website
 
 A modern React landing page for Snack Wine with automatic deployment to AWS S3 via GitHub Actions.
 

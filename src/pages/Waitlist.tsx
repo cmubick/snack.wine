@@ -48,7 +48,7 @@ function Waitlist() {
             ✓ {waitlist.success}
           </div>
         ) : (
-          <form className="email-form" onSubmit={handleSubmit} aria-label="Waitlist signup">
+          <form className="email-form" onSubmit={handleSubmit} aria-label={waitlist.formAriaLabel}>
             <input 
               type="email" 
               placeholder={waitlist.formLabel}

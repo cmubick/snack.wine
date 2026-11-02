@@ -4,8 +4,8 @@ import { Link, Outlet } from 'react-router-dom'
 const NAV_LINKS = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
-  { to: '/spritzers', label: 'Spritzers' },
-  { to: '/waitlist', label: 'Waitlist' },
+  { to: '/spritzers', label: 'What\'s in the can' },
+  { to: '/waitlist', label: 'Mailing List' },
 ]
 
 function Layout() {

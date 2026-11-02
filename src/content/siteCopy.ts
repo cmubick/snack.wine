@@ -2,74 +2,68 @@ export const siteConfig = {
   domain: 'snack.wine',
   disclaimers: [
     'Online ordering not yet available.',
-    'Packaging shown may be prototype / concept.',
     'Must be 21+.',
   ],
 }
 
 export const home = {
-  h1: 'Snack Wine',
-  tagline: 'Portland-based. Fresno-made.',
-  subhead: 'Canned wine spritzers made with family-grown fruit from Fresno County.',
-  support: 'Launching soon in Portland. Join the waitlist for release dates, pop-ups, and first drops.',
-  bullets: [],
-  storyHeading: 'From Fresno County to Portland',
-  story: [
-    'I grew up in Fresno County, with my dad farming every day. He still does.',
-    'Wine has been part of my family for generations — my great-grandfather made wine long before me, my grandfather grew grapes, and my dad has been making wine my whole life.',
-    'I moved to Portland in 2001 and found music, art, rivers, bikes, and a community of artists and makers I love deeply.',
-    'Snack Wine is my way of connecting my hometown with my adopted home — and a way to step out of the office and back into the field and the winery, with my dad, where this all began.',
+  headline: 'My dad grows the grapes. I do the rest.',
+  subhead: 'Snack-sized wine, family-grown in Fresno County and canned for real life.',
+  status: 'Pouring now at Valley Oak Winery and around Portland. Coming soon to Davis and Fresno.',
+  disclaimer: 'Online ordering not yet available. Must be 21+.',
+}
+
+export const findUs = {
+  heading: 'Where to find us',
+  regions: [
+    {
+      name: 'California',
+      stockists: [
+        { name: 'Valley Oak Winery', city: 'Sanger', url: 'https://www.valleyoakwinery.com' },
+      ],
+    },
+    {
+      name: 'Oregon',
+      stockists: [
+        { name: 'Cherry Sprout Produce', city: 'Portland', url: 'https://www.instagram.com/cherrysprout' },
+        { name: 'Lombard House', city: 'Portland', url: 'https://lombardhouse.beer/' },
+        { name: 'SaunaGlo', city: 'Milwaukie', url: 'https://www.saunaglo.com/' },
+        { name: 'Oregon City Market', city: 'Oregon City', url: 'https://www.oregoncitymarket.com/' },
+        { name: 'Mak', city: 'Oregon City', url: 'https://mak-space.com/' },
+        { name: 'Yovu Beer', city: 'Oregon City', url: 'https://www.instagram.com/yovubeer' },
+      ],
+    },
   ],
-  previewHeading: 'Spritzers (preview)',
-  previewIntro: 'We\'re preparing our first canned releases. Here\'s the direction — details may evolve as we dial in the canning path.',
-  previewItems: [
-    { name: 'Crisp Spritz', description: 'bright citrus, dry finish' },
-    { name: 'Rosé Spritz', description: 'fresh fruit' },
-  ],
-  tradeBandHeading: 'For shops, distributors, and partners',
-  tradeBandCopy: 'If you\'re interested in carrying Snack Wine or learning more as the product launches, I\'d love to connect.',
-  disclaimer: 'Packaging shown may be prototype or concept. Online ordering not yet available. Must be 21+.',
+  comingSoon: 'Coming soon: farmers markets in and around Davis, plus shops and bars around Davis and Fresno.',
+  contactPrompt: 'Want Snack Wine at your shop or bar?',
+  contactLink: 'Get in touch',
+  contactEmail: 'info@snack.wine',
 }
 
 export const about = {
   heading: 'About',
   story: [
-    'I grew up in Fresno County, with my dad farming every day. He still does.',
-    'Wine has been part of my family for generations — my great-grandfather made wine long before me, my grandfather grew grapes, and my dad has been making wine my whole life.',
-    'I moved to Portland in 2001 and found music, art, rivers, bikes, and a community of artists and makers I love deeply.',
-    'Snack Wine is my way of connecting my hometown with my adopted home — and a way to step out of the office and back into the field and the winery, with my dad, where this all began.',
+    'I grew up in Fresno County, watching my dad farm every day. He still does.',
+    'Wine goes back generations in my family. My great-grandfather made wine, my grandfather grew grapes, and my dad has been making wine my whole life.',
+    'In 2001 I moved to Portland and stayed for 25 years. It gave me music, art, rivers, bikes, and a community of artists and makers who shaped how I see almost everything, including the art on every can.',
+    'Snack Wine started there, and you\'ll still find it around Portland. But to make it the way I want, I need to be close to the vines. So my partner and I moved to Davis. The winery is now three hours away instead of twelve, and I\'m back in the vineyard and the cellar with my dad, where all of this began.',
   ],
+  vineToCanHeading: 'From vine to can',
+  vineToCan: 'Every can starts in my dad\'s vineyard and ends with my own art on the label. Everything in between is done by hand, and some of it takes years.',
   whyCansHeading: 'Why cans',
-  whyCans: 'Cans keep things fresh, travel well, and fit real life — parks, rivers, picnics, shows, and the people you want to share with. My goal is to make something that\'s genuinely delicious and thoughtfully made, without taking itself too seriously.',
+  whyCans: 'One can, one moment. No corkscrew, no half-finished bottle. Cans stay fresh, travel well, and fit real life: picnics, rivers, bike rides, shows, the farmers market, the back porch. That\'s what "snack" means to us: something good you can grab, share and enjoy with whatever\'s on the table. Made with care, never too serious.',
 }
 
-export const spritzers = {
-  heading: 'Spritzers',
-  note: 'Packaging and final blends may evolve as production is finalized.',
-  items: [
-    { name: 'Rosé Wine Spritzer', description: 'Fresh fruit, dry, bright, effortlessly crisp.' },
-    { name: 'White Wine Spritzer', description: 'Crisp, dry, clean summer refreshment.' },
-    { name: 'Red Wine Spritzer', description: 'Bright red wine with citrus lift.' },
-  ],
-}
-
-export const trade = {
-  heading: 'Trade / Wholesale',
-  intro: 'Snack Wine is a Portland project rooted in a Fresno County vineyard. We\'re preparing our first canned releases for 2026. If you\'re interested in carrying Snack Wine or supporting production, I\'d love to connect.',
-  whatToInclude: [
-    'Business name + your role',
-    'City/state',
-    'Retail / wholesale / distribution',
-    'Timeline + expected volumes',
-    'Anything you\'re looking for (style, ABV, formats)',
-  ],
-  cta: 'Email trade inquiry',
+export const whatsInTheCan = {
+  heading: 'What\'s in the can',
+  body: 'Our first two releases are spritzers, a rosé and a white: half our wine, half water, and a squeeze of lemon. Bright, easy, and made for warm afternoons. Next up is a bubbly Sangiovese, with more wines to follow.',
 }
 
 export const waitlist = {
-  heading: 'Join the waitlist',
-  intro: 'Occasional updates: launch timing, events, and first-release announcements. No spam.',
+  heading: 'Get on the list',
+  intro: 'New releases, market days, where we\'re pouring, and the occasional note from the farm. No spam.',
   formLabel: 'Email address',
+  formAriaLabel: 'Mailing list signup',
   button: 'Join the list',
-  success: 'Thanks — you\'re on the list.',
+  success: 'Thanks, you\'re on the list.',
 }

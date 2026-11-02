@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { home } from '../content/siteCopy'
+import { home, findUs, waitlist } from '../content/siteCopy'
 import heroMobile from '../assets/snack_wine_mockups_600.webp'
 import heroTablet from '../assets/snack_wine_mockups_1200.webp'
 import heroDesktop from '../assets/snack_wine_mockups_2400.webp'
@@ -49,16 +49,19 @@ function Home() {
       </picture>
 
       <div className="content">
-        <p className="tagline">{home.tagline}</p>
+        <p className="tagline">{home.headline}</p>
         <p className="subtitle">{home.subhead}</p>
-        <p className="description">{home.support}</p>
+        <p className="description">{home.status}</p>
+
+        <h2 className="section-title">{waitlist.heading}</h2>
+        <p className="description">{waitlist.intro}</p>
 
         {submitted ? (
           <div className="success-message" role="status" aria-live="polite">
-            ✓ {home.h1 === 'Snack Wine' ? 'Thanks — you\'re on the list.' : 'Thank you!'}
+            ✓ {waitlist.success}
           </div>
         ) : (
-          <form className="email-form" onSubmit={handleSubmit} aria-label="Waitlist signup">
+          <form className="email-form" onSubmit={handleSubmit} aria-label={waitlist.formAriaLabel}>
             <input 
               type="email" 
               placeholder="Enter your email"
@@ -73,16 +76,34 @@ function Home() {
               className="submit-btn"
               disabled={isLoading}
             >
-              {isLoading ? 'Sending...' : 'Join the waitlist'}
+              {isLoading ? 'Sending...' : waitlist.button}
             </button>
             {error && <p className="error-message" role="alert">{error}</p>}
           </form>
         )}
 
         <div className="trade-band">
-          <h3 className="trade-heading">{home.tradeBandHeading}</h3>
-          <p className="description">{home.tradeBandCopy}</p>
-          <a href="mailto:info@snack.wine" className="trade-link">Get in touch</a>
+          <h2 className="section-title">{findUs.heading}</h2>
+          {findUs.regions.map((region) => (
+            <div key={region.name}>
+              <h3 className="trade-heading">{region.name}</h3>
+              <div className="trade-list">
+                {region.stockists.map((stockist) => (
+                  <div key={stockist.name} className="trade-list-item">
+                    <a href={stockist.url} target="_blank" rel="noopener noreferrer" className="social-link">
+                      {stockist.name}
+                    </a>
+                    , {stockist.city}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+          <p className="description">{findUs.comingSoon}</p>
+          <p className="description">
+            {findUs.contactPrompt}{' '}
+            <a href={`mailto:${findUs.contactEmail}`} className="social-link">{findUs.contactLink}</a>.
+          </p>
         </div>
 
         <p className="home-disclaimer">{home.disclaimer}</p>
